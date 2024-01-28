@@ -13,7 +13,7 @@ se puede consultar el siguiente [enlace](https://codingchallenges.fyi/challenges
 
 ## 💎 Tecnologías
 
----
+
 
 - Spring Boot
 - MyBatis
@@ -22,7 +22,7 @@ se puede consultar el siguiente [enlace](https://codingchallenges.fyi/challenges
 
 ## ✨ Funcionalidades
 
----
+
 
 - ### Agregar una nueva URL larga, para generar su correspondiente key y formar la URL acortada.
 
@@ -44,7 +44,7 @@ se puede consultar el siguiente [enlace](https://codingchallenges.fyi/challenges
 
 ## 🧪 ¿Qué he aprendido?
 
----
+
 
 Durante la realización del proyecto he podido aprender nuevos conceptos, a la par que reforzar otros que ya conocía.
 
@@ -60,7 +60,7 @@ modularidad.
 
 ## 🛠 Posibles pasos futuros
 
----
+
 
 Algunos próximos pasos que se pueden agregar al proyecto son:
 
@@ -69,7 +69,7 @@ Algunos próximos pasos que se pueden agregar al proyecto son:
 
 ## 🎮 Ejecutar la aplicación
 
----
+
 
 1. Crear la base de datos. Personalmente, me resulta más cómodo usar Docker para ejecutar un contenedor en el que tener la BBDD
 de PostgreSQL. El comando que he usado es:
