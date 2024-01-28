@@ -1,0 +1,47 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mloprio.urlshortener.repository.mapper.UrlShortenerMapper">
+
+    <resultMap id="urlData" type="com.mloprio.urlshortener.model.UrlShortenerEntity">
+        <result property="urlId" column="url_id" />
+        <result property="longUrl" column="long_url" />
+        <result property="shortUrl" column="short_url" />
+        <result property="keyValue" column="key_value" />
+    </resultMap>
+
+    <select id="getUrlInfo" resultMap="urlData">
+        select
+            url_id,
+            long_url,
+            short_url,
+            key_value
+        from urls
+        where long_url = #{requestDto.url}
+    </select>
+
+    <select id="getKeyCount" resultType="int">
+        select count(1)
+        from urls
+        where key_value = #{key}
+    </select>
+
+    <insert id="insertUrlInfo">
+        <selectKey keyProperty="urlId" resultType="int" order="BEFORE">
+            SELECT nextval('url_sequence')
+        </selectKey>
+        INSERT INTO urls (url_id, long_url, short_url, key_value)
+        VALUES (#{urlId}, #{dto.longUrl}, #{dto.shortUrl}, #{dto.keyValue})
+    </insert>
+
+    <select id="getLongUrl" resultMap="urlData">
+        select long_url
+        from urls
+        where key_value = #{key}
+    </select>
+
+    <delete id="deleteUrl">
+        delete from urls
+        where key_value = #{key}
+    </delete>
+
+</mapper>
